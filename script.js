@@ -18,7 +18,6 @@ let questionText = "";
   .then((data) => {
     questionText = data[Math.floor(Math.random() * data.length)];
     question.innerHTML = questionText;
-    // console.log(question)
   });
 
 // checks the user typed character and displays accordingly
@@ -49,7 +48,7 @@ const typeController = (e) => {
   } else {
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
     errorCount++;
-    console.log(newLetter)
+    // console.log(newLetter)
   }
 
   // check if given question text is equal to user typed text
@@ -71,7 +70,7 @@ const gameOver = () => {
   // the current time is the finish time
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
-  const timeTaken = (finishTime - startTime) / 1000;
+  const timeTaken = parseInt((finishTime - startTime) / 1000);
 
   // show result modal
   resultModal.innerHTML = "";
